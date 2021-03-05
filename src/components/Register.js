@@ -26,15 +26,15 @@ const validEmail = (value) => {
   }
 };
 
-const vusername = (value) => {
-  if (value.length < 3 || value.length > 20) {
-    return (
-      <div className="alert alert-danger" role="alert">
-        The username must be between 3 and 20 characters.
-      </div>
-    );
-  }
-};
+// const vusername = (value) => {
+//   if (value.length < 3 || value.length > 20) {
+//     return (
+//       <div className="alert alert-danger" role="alert">
+//         The username must be between 3 and 20 characters.
+//       </div>
+//     );
+//   }
+// };
 
 const vpassword = (value) => {
   if (value.length < 6 || value.length > 40) {
@@ -50,16 +50,16 @@ const Register = (props) => {
   const form = useRef();
   const checkBtn = useRef();
 
-  const [username, setUsername] = useState("");
+  // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState("");
 
-  const onChangeUsername = (e) => {
-    const username = e.target.value;
-    setUsername(username);
-  };
+  // const onChangeUsername = (e) => {
+  //   const username = e.target.value;
+  //   setUsername(username);
+  // };
 
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -80,7 +80,7 @@ const Register = (props) => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      AuthService.register(username, email, password).then(
+      AuthService.register(email, password).then(
         (response) => {
           setMessage(response.data.message);
           setSuccessful(true);
@@ -112,7 +112,7 @@ const Register = (props) => {
         <Form onSubmit={handleRegister} ref={form}>
           {!successful && (
             <div>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <Input
                   type="text"
@@ -122,7 +122,7 @@ const Register = (props) => {
                   onChange={onChangeUsername}
                   validations={[required, vusername]}
                 />
-              </div>
+              </div> */}
 
               <div className="form-group">
                 <label htmlFor="email">Email</label>

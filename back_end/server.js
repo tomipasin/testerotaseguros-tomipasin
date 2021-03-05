@@ -14,8 +14,9 @@ app.use(cors(corsOptions));
 const db = require("./app/models");
 const Role = db.role;
 
-//essa função deixo somente para inicializar o db...
-db.sequelize.sync({force: true}).then(() => {
+//essa função deixo em true somente para inicializar o db com as 
+//tabelas certinhas... depois passo para false.
+db.sequelize.sync({force: false}).then(() => {
   console.log('Drop and Resync Db');
   initial();
 });

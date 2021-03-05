@@ -1,10 +1,8 @@
-import React, { useState, useEffect, Component} from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-
 import AuthService from "./services/auth.service";
-
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
@@ -12,62 +10,41 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-
-// const App = () => {
-//   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
-//   const [showAdminBoard, setShowAdminBoard] = useState(false);
-//   const [currentUser, setCurrentUser] = useState(undefined);
-
-//   useEffect(() => {
-//     const user = AuthService.getCurrentUser();
-//     console.log(user)
-
-//     if (user) {
-//       setCurrentUser(user);
-//       setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
-//       setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-//     }
-//   }, []);
-
-//   const logOut = () => {
-//     AuthService.logout();
-//   };
+import logo from "./logo.png";
+import image from "./image.png";
+import rodape from "./rodape.png";
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.logOut = this.logOut.bind(this);
 
-    this.state = {
-      showModeratorBoard: false,
-      showAdminBoard: false,
-      currentUser: undefined,
-    };
-  }
 
-  componentDidMount() {
+const App = () => {
+  const [showModeratorBoard, setShowModeratorBoard] = useState(false);
+  const [showAdminBoard, setShowAdminBoard] = useState(false);
+  const [currentUser, setCurrentUser] = useState(undefined);
+
+  useEffect(() => {
     const user = AuthService.getCurrentUser();
     console.log(user)
+
     if (user) {
-      this.setState({
-        currentUser: user,
-      });
+      setCurrentUser(user);
+      setShowModeratorBoard(user.roles.includes("ROLE_MODERATOR"));
+      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
     }
-  }
+  }, []);
 
-  logOut() {
+  const logOut = () => {
     AuthService.logout();
-  }
-
-  render() {
-    const { currentUser } = this.state;
+  };
 
   return (
     <div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
+      <div>
+        <img src={image} className="laranja" />
+      </div>
+      <nav className="navbar navbar-expand navbar-dark bg-nav">
         <Link to={"/"} className="navbar-brand">
-          bezKoder
+          <img src={logo} />
         </Link>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -76,7 +53,7 @@ class App extends Component {
             </Link>
           </li>
 
-          {this.state.showModeratorBoard && (
+          {showModeratorBoard && (
             <li className="nav-item">
               <Link to={"/mod"} className="nav-link">
                 Moderator Board
@@ -84,7 +61,7 @@ class App extends Component {
             </li>
           )}
 
-          {this.state.showAdminBoard && (
+          {showAdminBoard && (
             <li className="nav-item">
               <Link to={"/admin"} className="nav-link">
                 Admin Board
@@ -109,7 +86,7 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={this.logOut()}>
+              <a href="/login" className="nav-link" onClick={logOut}>
                 LogOut
               </a>
             </li>
@@ -131,7 +108,8 @@ class App extends Component {
         )}
       </nav>
 
-      <div className="container mt-3">
+
+      <div className="container mt-10">
         <Switch>
           <Route exact path={["/", "/home"]} component={Home} />
           <Route exact path="/login" component={Login} />
@@ -142,9 +120,16 @@ class App extends Component {
           <Route path="/admin" component={BoardAdmin} />
         </Switch>
       </div>
+      
+      <div class="footer">
+       
+         <img src={rodape}/>
+     
+      </div>
+   
+
     </div>
   );
 };
-}
 
 export default App;

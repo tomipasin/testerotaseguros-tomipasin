@@ -2,8 +2,9 @@ import React, { useState, useRef } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
-
 import AuthService from "../services/auth.service";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const required = (value) => {
   if (!value) {
@@ -67,16 +68,18 @@ const Login = (props) => {
 
   return (
     <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        />
+<div>
+  <h5 className="parag">PARÁGRAFO</h5>
+  <p className="par">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget facilisis ante. Donec sodales, odio vel consequat blandit, odio augue commodo ipsum, id rhoncus turpis ex eget justo. Sed ac urna eros. Aenean condimentum, neque et egestas auctor, dolor sapien semper turpis, non rhoncus lectus massa eget magna. Maecenas bibendum ligula nec urna condimentum maximus. Sed felis dui, sodales vitae libero in, ultrices faucibus sapien. Duis non vehicula mauris, eu maximus enim. Suspendisse at mauris sed tellus elementum auctor sit amet eu erat. Donec pharetra mauris et felis faucibus, vitae varius tortor scelerisque. Proin at consectetur augue, sit amet malesuada arcu. Praesent dignissim luctus tellus, blandit tempus felis venenatis sit amet. Maecenas felis lectus, semper quis orci id, pretium vulputate ligula. Maecenas in auctor diam.
+</p>
+</div>
 
+
+      <div className="card card-container">
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="username">Email
             <Input
               type="text"
               className="form-control"
@@ -85,10 +88,11 @@ const Login = (props) => {
               onChange={onChangeUsername}
               validations={[required]}
             />
+            </label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Senha</label>
             <Input
               type="password"
               className="form-control"
@@ -100,11 +104,11 @@ const Login = (props) => {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-primary btn-block" disabled={loading}>
+            <button className="btn btn-secondary btn-block butt" disabled={loading}>
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
               )}
-              <span>Login</span>
+              <span>LOGIN</span>
             </button>
           </div>
 
