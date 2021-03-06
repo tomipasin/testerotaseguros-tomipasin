@@ -10,15 +10,9 @@ import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";
-import logo from "./img/logo.png";
-import logoHome from "./img/home-icon.png";
-import cursos from "./img/classes-icon.png";
-import areaDoAluno from "./img/student-icon.png";
-import contato from "./img/mail-icon.png";
-import faq from "./img/faq-icon.png";
-import graduation from "./img/icon-graduation.png";
-import admIcon from "./img/admin.png";
-import logout from "./img/logout.png";
+import logo from "./logo.png";
+import image from "./image.png";
+import rodape from "./rodape.png";
 
 
 
@@ -55,26 +49,22 @@ const App = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-            <Link to={"/home"} className="branco">
-            <img src={logoHome} className="icons"/>
+            <Link to={"/home"} className="nav-link">
               Home
             </Link>
           </li>
 
-          <li className="nav-item">
-            <Link to={"/home"} className="branco">
-            <img src={cursos} className="icons"/>
-              Cursos
-            </Link>
-          </li>
-
-
-
+          {showModeratorBoard && (
+            <li className="nav-item">
+              <Link to={"/mod"} className="nav-link">
+                Moderator Board
+              </Link>
+            </li>
+          )}
 
 {showAdminBoard && (
             <li className="nav-item">
-              <Link to={"/admin"} className="branco">
-              <img src={admIcon} className="icons"/>
+              <Link to={"/admin"} className="nav-link">
                 Admin Board
               </Link>
             </li>
@@ -82,64 +72,38 @@ const App = () => {
 
           {currentUser && (
             <li className="nav-item">
-            <Link to={"/user"} className="branco">
-            <img src={areaDoAluno} className="icons"/>
-              Área do Aluno
-            </Link>
-          </li>
+              <Link to={"/user"} className="nav-link">
+                User
+              </Link>
+            </li>
           )}
-
-
 
 {currentUser ? (
           <div className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link to={"/profile"} className="branco">
+              <Link to={"/profile"} className="nav-link">
                 {currentUser.username}
               </Link>
             </li>
             <li className="nav-item">
-              <a href="/login" className="branco" onClick={logOut}>
-              <img src={logout} className="icons"/>
+              <a href="/login" className="nav-link" onClick={logOut}>
                 LogOut
               </a>
             </li>
           </div>
         ) : (
           <div className="navbar-nav ml-auto">
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link to={"/login"} className="nav-link">
                 Login
               </Link>
-            </li> */}
+            </li>
 
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link to={"/register"} className="nav-link">
                 Sign Up
               </Link>
-            </li> */}
-
-
-
-
-          <li className="nav-item">
-            <Link to={"/home"} className="branco">
-            <img src={contato} className="icons"/>
-              Contato
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <Link to={"/home"} className="branco">
-            <img src={faq} className="icons"/>
-              Ouvidoria
-            </Link>
-          </li>
-
-          <li className="nav-item">
-            <img src={graduation} className="icons"/>
-          </li>
-
+            </li>
           </div>
         )}
 
@@ -149,9 +113,79 @@ const App = () => {
       </nav>
 
 
-      <div>
+      {/* <div>
+        <img src={image} className="laranja" />
+      </div>
+      <nav className="navbar navbar-expand navbar-dark bg-nav">
+        <Link to={"/"} className="navbar-brand">
+          <img src={logo} />
+        </Link>
+        <div className="navbar-nav mr-auto">
+          <li className="nav-item">
+            <Link to={"/home"} className="nav-link">
+              Home
+            </Link>
+          </li>
+
+          {showModeratorBoard && (
+            <li className="nav-item">
+              <Link to={"/mod"} className="nav-link">
+                Moderator Board
+              </Link>
+            </li>
+          )}
+
+          {showAdminBoard && (
+            <li className="nav-item">
+              <Link to={"/admin"} className="nav-link">
+                Admin Board
+              </Link>
+            </li>
+          )}
+
+          {currentUser && (
+            <li className="nav-item">
+              <Link to={"/user"} className="nav-link">
+                User
+              </Link>
+            </li>
+          )}
+        </div>
+
+        {currentUser ? (
+          <div className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to={"/profile"} className="nav-link">
+                {currentUser.username}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a href="/login" className="nav-link" onClick={logOut}>
+                LogOut
+              </a>
+            </li>
+          </div>
+        ) : (
+          <div className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link to={"/login"} className="nav-link">
+                Login
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link to={"/register"} className="nav-link">
+                Sign Up
+              </Link>
+            </li>
+          </div>
+        )}
+      </nav> */}
+
+
+      <div className="container mt-10">
         <Switch>
-          <Route exact path={["/", "/home"]} component={Login} />
+          <Route exact path={["/", "/home"]} component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/profile" component={Profile} />
@@ -162,7 +196,8 @@ const App = () => {
       </div>
 
       <div class="footer">
-    
+
+        <img src={rodape} />
 
       </div>
 

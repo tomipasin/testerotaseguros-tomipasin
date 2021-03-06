@@ -4,7 +4,6 @@ import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import AuthService from "../services/auth.service";
 import "bootstrap/dist/css/bootstrap.min.css";
-import image from "../img/image.png";
 
 
 const required = (value) => {
@@ -67,39 +66,33 @@ const Login = (props) => {
     }
   };
 
-
-
-
-
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-6 px-0">
-          <img src={image} className="laranja" />
-        </div>
-        <div className="col-md-6 ">
-        <h5 className="parag">PARÁGRAFO</h5>
-        <p className="par">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas bibendum ligula nec urna condimentum maximus. Sed felis dui, sodales vitae libero in, ultrices faucibus sapien. Duis non vehicula mauris, eu maximus enim. Suspendisse at mauris sed tellus elementum auctor sit amet eu erat. Donec pharetra mauris et felis faucibus, vitae varius tortor scelerisque. Proin at consectetur augue, sit amet malesuada arcu. Praesent dignissim luctus tellus, blandit tempus felis venenatis sit amet.
-        </p>
+    <div className="col-md-12">
+<div>
+  <h5 className="parag">PARÁGRAFO</h5>
+  <p className="par">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget facilisis ante. Donec sodales, odio vel consequat blandit, odio augue commodo ipsum, id rhoncus turpis ex eget justo. Sed ac urna eros. Aenean condimentum, neque et egestas auctor, dolor sapien semper turpis, non rhoncus lectus massa eget magna. Maecenas bibendum ligula nec urna condimentum maximus. Sed felis dui, sodales vitae libero in, ultrices faucibus sapien. Duis non vehicula mauris, eu maximus enim. Suspendisse at mauris sed tellus elementum auctor sit amet eu erat. Donec pharetra mauris et felis faucibus, vitae varius tortor scelerisque. Proin at consectetur augue, sit amet malesuada arcu. Praesent dignissim luctus tellus, blandit tempus felis venenatis sit amet. Maecenas felis lectus, semper quis orci id, pretium vulputate ligula. Maecenas in auctor diam.
+</p>
+</div>
 
-        <div className="card card-container">
+
+      <div className="card card-container">
         <Form onSubmit={handleLogin} ref={form}>
           <div className="form-group">
-            <label htmlFor="username">Email:
+            <label htmlFor="username">Email
             <Input
-                type="text"
-                className="form-control"
-                name="username"
-                value={username}
-                onChange={onChangeUsername}
-                validations={[required]}
-              />
+              type="text"
+              className="form-control"
+              name="username"
+              value={username}
+              onChange={onChangeUsername}
+              validations={[required]}
+            />
             </label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Senha:</label>
+            <label htmlFor="password">Senha</label>
             <Input
               type="password"
               className="form-control"
@@ -129,17 +122,6 @@ const Login = (props) => {
           <CheckButton style={{ display: "none" }} ref={checkBtn} />
         </Form>
       </div>
-
-
-        </div>
-
-      </div>
-
-
-      
-
-
-
     </div>
   );
 };
