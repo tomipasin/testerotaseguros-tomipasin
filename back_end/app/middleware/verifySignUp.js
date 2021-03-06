@@ -6,9 +6,8 @@ const User = db.user;
 
 //verifica se o user não está duplicado antes da criaçao.
 const checkDuplicateUsernameOrEmail = (req, res, next) => {
-  
 
-    //aqui verificamos o email da mesma forma...
+  // Email
     User.findOne({
       where: {
         email: req.body.email
@@ -16,15 +15,15 @@ const checkDuplicateUsernameOrEmail = (req, res, next) => {
     }).then(user => {
       if (user) {
         res.status(400).send({
-          message: "Não deu... Email já existe no sistema!"
+          message: "Failed! Email is already in use!"
         });
         return;
       }
 
       next();
     });
-  
-};
+  };
+
 
 //e aqui esse middleware verifica se as roles definidas na criação
 //desse user existem.

@@ -3,7 +3,6 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
 import AuthService from "../services/auth.service";
 
 const required = (value) => {
@@ -20,27 +19,27 @@ const validEmail = (value) => {
   if (!isEmail(value)) {
     return (
       <div className="alert alert-danger" role="alert">
-        This is not a valid email.
+        Este não é um email válido.
       </div>
     );
   }
 };
 
-// const vusername = (value) => {
-//   if (value.length < 3 || value.length > 20) {
-//     return (
-//       <div className="alert alert-danger" role="alert">
-//         The username must be between 3 and 20 characters.
-//       </div>
-//     );
-//   }
-// };
+const vusername = (value) => {
+  if (value.length < 3 || value.length > 20) {
+    return (
+      <div className="alert alert-danger" role="alert">
+        O nome deve ter entre 3 e 20 caracteres.
+      </div>
+    );
+  }
+};
 
 const vpassword = (value) => {
   if (value.length < 6 || value.length > 40) {
     return (
       <div className="alert alert-danger" role="alert">
-        The password must be between 6 and 40 characters.
+        A senha precisa ter entre 6 e 40 caracteres.
       </div>
     );
   }
@@ -50,16 +49,16 @@ const Register = (props) => {
   const form = useRef();
   const checkBtn = useRef();
 
-  // const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successful, setSuccessful] = useState(false);
   const [message, setMessage] = useState("");
 
-  // const onChangeUsername = (e) => {
-  //   const username = e.target.value;
-  //   setUsername(username);
-  // };
+  const onChangeUsername = (e) => {
+    const username = e.target.value;
+    setUsername(username);
+  };
 
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -71,16 +70,18 @@ const Register = (props) => {
     setPassword(password);
   };
 
+ 
   const handleRegister = (e) => {
     e.preventDefault();
-
+    
+    
     setMessage("");
     setSuccessful(false);
 
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      AuthService.register(email, password).then(
+      AuthService.register(username, email, password).then(
         (response) => {
           setMessage(response.data.message);
           setSuccessful(true);
@@ -100,20 +101,16 @@ const Register = (props) => {
     }
   };
 
+
   return (
     <div className="col-md-12">
-      <div className="card card-container">
-        <img
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          alt="profile-img"
-          className="profile-img-card"
-        />
-
+     <div className="reg">
+      <h3 className="admH3">Registrar novo usuário</h3>
         <Form onSubmit={handleRegister} ref={form}>
           {!successful && (
             <div>
-              {/* <div className="form-group">
-                <label htmlFor="username">Username</label>
+              <div className="form-group">
+                <label htmlFor="username">Nome</label>
                 <Input
                   type="text"
                   className="form-control"
@@ -122,7 +119,7 @@ const Register = (props) => {
                   onChange={onChangeUsername}
                   validations={[required, vusername]}
                 />
-              </div> */}
+              </div>
 
               <div className="form-group">
                 <label htmlFor="email">Email</label>
@@ -149,7 +146,7 @@ const Register = (props) => {
               </div>
 
               <div className="form-group">
-                <button className="btn btn-primary btn-block">Sign Up</button>
+                <button className="btn btn-secondary btn-block">Registrar</button>
               </div>
             </div>
           )}
@@ -157,7 +154,7 @@ const Register = (props) => {
           {message && (
             <div className="form-group">
               <div
-                className={ successful ? "alert alert-success" : "alert alert-danger" }
+                className={successful ? "alert alert-success" : "alert alert-danger"}
                 role="alert"
               >
                 {message}

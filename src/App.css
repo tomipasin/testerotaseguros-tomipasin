@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body{
+  background: #E5E5E5;
+  font-family: 'Nunito', sans-serif;
+}
+
+
 label {
   display: block;
   margin-top: 10px;
@@ -8,7 +16,7 @@ label {
   padding: 40px 40px;
 }
 
-.card_ORIG {
+.reg {
   background-color: #f7f7f7;
   padding: 20px 25px 30px;
   margin: 0 auto 25px;
@@ -19,6 +27,13 @@ label {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  width: 570px;
+max-width: 100vh;
+
+}
+
+.admH3{
+  text-align: center;
 }
 
 .card{
@@ -58,9 +73,6 @@ border-radius: 5px;
   max-height: max-content;  
 }
 
-li{
-  color:#E5E5E5
-}
 
 .laranja{
   width: 680px;
@@ -74,10 +86,9 @@ li{
   margin: 0px;
 }
 
-body{
-  background: #E5E5E5;
+.size{
+  height: 205px;
 }
-
 
 
 .center{
@@ -125,9 +136,17 @@ height: 25px;
 }
 
 .icons {
-  padding: 10px 28px 10px;
+  padding: 10px 25px 10px;
   margin-top: px;
   height: 40px;
+}
+
+.cursos{
+  color: #1B1B1B;
+}
+
+.rodape{
+  max-width: 100%;
 }
 
 

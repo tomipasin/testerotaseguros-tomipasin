@@ -23,8 +23,18 @@ const Home = () => {
 
   return (
     <div className="container">
-      <header className="jumbotron">
-        <h3>{content}</h3>
+      <header className="jumbotron cursos">
+        <h3>Os cursos oferecidos são:</h3>
+
+        <ul>
+          <li>Administração.</li>
+          <li>Agronomia.</li>
+          <li>Análise e Desenvolvimento de Sistemas.</li>
+          <li>Arquitetura e Urbanismo.</li>
+          <li>Artes Cênicas.</li>
+          <li>Artes Visuais.</li>
+          <li>Banco de Dados.</li>
+        </ul>
       </header>
     </div>
   );
