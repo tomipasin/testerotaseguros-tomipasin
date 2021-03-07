@@ -1,11 +1,22 @@
 # testerotaseguros-tomipasin
 Teste técnico para a empresa Rota Seguros.
 
+### Demo: <a href="https://testerotasegurosfronend.herokuapp.com/">https://testerotasegurosfronend.herokuapp.com/</a>
+
 ### Credenciais de teste:
+
+## Administrador:
 <ul>
 <li>user: <strong>testeadmin@gmail.com</strong></li>
 <li>senha: <strong>teste1234</strong></li>
 </ul>
+
+## Usuário:
+<ul>
+<li>user: <strong>testeuser@gmail.com</strong></li>
+<li>senha: <strong>teste1234</strong></li>
+</ul>
+
 
 ### O que foi feito? 
 
