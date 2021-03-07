@@ -2,8 +2,12 @@
 Teste técnico para a empresa Rota Seguros.
 
 ### Credenciais de teste:
-user: testeadmin@gmail.com
-senha: teste1234
+<ul>
+<li>user: testeadmin@gmail.com</li>
+<li>senha: teste1234</li>
+</ul>
+
+
 
 
 ### O que foi feito? 
