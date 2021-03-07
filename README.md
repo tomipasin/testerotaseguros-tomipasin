@@ -3,8 +3,8 @@ Teste técnico para a empresa Rota Seguros.
 
 ### Credenciais de teste:
 <ul>
-<li>user: testeadmin@gmail.com</li>
-<li>senha: teste1234</li>
+<li>user: <strong>testeadmin@gmail.com</strong></li>
+<li>senha: <strong>teste1234</strong></li>
 </ul>
 
 
@@ -27,7 +27,15 @@ Como dados públicos, assessíveis com ou sem login, estará a lista de cursos d
 
 ### Screenshots:
 
-<img src="https://tomipasin.com/assets/img/CRUD.jpg" />
+<img src="https://tomipasin.com/assets/img/rotaseguros1.png" />
+</hr>
+<img src="https://tomipasin.com/assets/img/rotaseguros2.png" />
+</hr>
+<img src="https://tomipasin.com/assets/img/rotaseguros3.png" />
+</hr>
+<img src="https://tomipasin.com/assets/img/rotaseguros4.png" />
+</hr>
+<img src="https://tomipasin.com/assets/img/rotaseguros5.png" />
 
 
 
