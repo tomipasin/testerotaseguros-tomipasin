@@ -28,13 +28,13 @@ Como dados públicos, assessíveis com ou sem login, estará a lista de cursos d
 ### Screenshots:
 
 <img src="https://tomipasin.com/assets/img/rotaseguros1.png" />
-</hr>
+
 <img src="https://tomipasin.com/assets/img/rotaseguros2.png" />
-</hr>
+
 <img src="https://tomipasin.com/assets/img/rotaseguros3.png" />
-</hr>
+
 <img src="https://tomipasin.com/assets/img/rotaseguros4.png" />
-</hr>
+
 <img src="https://tomipasin.com/assets/img/rotaseguros5.png" />
 
 
