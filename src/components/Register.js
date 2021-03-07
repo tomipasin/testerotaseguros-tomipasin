@@ -113,7 +113,7 @@ const Register = (props) => {
                 <label htmlFor="username">Nome</label>
                 <Input
                   type="text"
-                  className="form-control"
+                  className="form-control border-warning"
                   name="username"
                   value={username}
                   onChange={onChangeUsername}
@@ -125,7 +125,7 @@ const Register = (props) => {
                 <label htmlFor="email">Email</label>
                 <Input
                   type="text"
-                  className="form-control"
+                  className="form-control border-warning"
                   name="email"
                   value={email}
                   onChange={onChangeEmail}
@@ -137,7 +137,7 @@ const Register = (props) => {
                 <label htmlFor="password">Password</label>
                 <Input
                   type="password"
-                  className="form-control"
+                  className="form-control border-warning"
                   name="password"
                   value={password}
                   onChange={onChangePassword}

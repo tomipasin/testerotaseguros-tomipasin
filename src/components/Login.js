@@ -89,7 +89,7 @@ const Login = (props) => {
             <label htmlFor="username">Email:
             <Input
                 type="text"
-                className="form-control"
+                className="form-control border-warning "
                 name="username"
                 value={username}
                 onChange={onChangeUsername}
@@ -102,7 +102,7 @@ const Login = (props) => {
             <label htmlFor="password">Senha:</label>
             <Input
               type="password"
-              className="form-control"
+              className="form-control border-warning"
               name="password"
               value={password}
               onChange={onChangePassword}
